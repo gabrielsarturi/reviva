@@ -1,0 +1,787 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Chevin Bold Italic';
+    src: url('fontes/Chevin\ BoldItalic.otf') format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Chevin Bold';
+    src: url('fontes/Chevin\ Bold.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Chevin Light';
+    src: url('fontes/Chevin\ Light.otf') format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'PlusJakartaSans Regular';
+    src: url('fontes/PlusJakartaSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+:root {
+    --cor1: #67002e;
+    --cor2: #9d0046;
+    --cor3: #f994b2;
+    --cor4: #f78819;
+    --cor5: #fde8c2;
+    --cor6: #872e6e;
+    --cor7: #fcacd9;
+
+    --fonte-titulo: 'Chevin Bold Italic';
+    --fonte-subtitulo: 'Chevin Bold';
+    --fonte-submenu: 'Chevin Light';
+    --fonte-corpo: 'PlusJakartaSans Regular';
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-image: linear-gradient(to top, var(--cor6), white);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.exibicao {
+    background-image: url(imagens/background-exibicao.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.home {
+    background-image: linear-gradient(to top, var(--cor7), white);
+}
+
+header {
+    /* background-color: var(--cor3); */
+    background-image: url(imagens/header.jpg);
+    background-position-x: 100%;
+    background-position-y: 87%;
+    background-size: cover;
+}
+
+header h1 {
+    max-width: 850px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-family: var(--fonte-titulo);
+    font-size: 3em;
+    color: var(--cor2);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    text-align: left;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: var(--cor2);
+}
+
+header h1 a:hover {
+    color: var(--cor1);
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+
+header h2 {
+    max-width: 850px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-family: var(--fonte-submenu);
+    font-size: 0.9em;
+    font-style: italic;
+    color: var(--cor2);
+    margin: auto;
+    margin-top: -16px;
+}
+
+header nav {
+    background-color: var(--cor2);
+}
+
+header nav ul {
+    background-color: var(--cor2);
+    list-style: none;
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    max-height: fit-content;
+}
+
+header nav ul li {
+    flex: auto;
+}
+
+header nav ul li a {
+    font-family: var(--fonte-submenu);
+    font-size: 0.9em;
+    color: white;
+    text-decoration: none;
+    min-height: 20px;
+    padding: 10px 20px;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    flex: wrap;
+}
+
+header nav ul li a.selected {
+    font-family: var(--fonte-subtitulo);
+    font-size: 1em;
+}
+
+header nav ul li a:hover {
+    background-color: var(--cor1);
+    color: var(--cor4);
+    transition: 0.2s;
+}
+
+header nav ul li a.selected:hover {
+    background-color: var(--cor4);
+    color: var(--cor1);
+}
+
+.menu-drop {
+    position: relative;
+}
+
+.menu-drop .drop {
+    display: block;
+    position: absolute;
+    background-color: var(--cor2);
+    width: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+    z-index: 1;
+}
+
+.menu-drop:hover .drop {
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu-drop .drop a {
+    display:block;
+    text-align: left;
+    font-size: 0.8em;
+    padding: 10px;
+    width: auto;
+}
+
+.menu-drop .drop a.selected {
+    font-size: 0.9em;
+    border-bottom: 0px;
+}
+
+/* section para página inicial  */
+
+section.head {
+    background: linear-gradient(to left, white, var(--cor5));
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section.head h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 2em;
+    padding: 10px;
+    color: var(--cor2);
+    text-align: center;
+    margin: auto;
+}
+
+section.head + section.main {
+    border-top: 1px solid white;
+}
+
+section.gen + p {
+    border-top: 1px solid white;
+}
+
+section.main {
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+section.main p {
+    font-size: 0.9em;
+    text-indent: 0em;
+    display: inline-block;
+    position: relative;
+    max-width: 360px;
+    height: max-content;
+    margin: 20px auto;
+    padding: 15px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+section.main p:hover {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 0.3s;
+}
+
+section#img01 {
+    background-image: url(imagens/background-1.jpg);
+}
+
+section#img02 {
+    background-image: url(imagens/background-2.jpg);
+}
+
+section#img03 {
+    background-image: url(imagens/background-3.jpg);
+}
+
+section#img04 {
+    background-image: url(imagens/background-4.jpg);
+}
+
+section#img05 {
+    background-image: url(imagens/background-5.jpg);
+}
+
+section#img06 {
+    background-image: url(imagens/background-6.jpg);
+}
+
+section#img07 {
+    background-image: url(imagens/header-vinhetas-2.jpg);
+}
+
+section#abertura {
+    background-image: url(imagens/header-vinhetas-1.jpg);
+}
+
+section.head + section.abertura {
+    border-top: 1px solid white;
+}
+
+section.abertura p {
+    text-indent: 0em;
+}
+
+section.main ul.main {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    justify-content: center;
+    vertical-align: middle;
+    max-width: 340px;
+}
+
+section.main ul.main li img {
+    height: 120px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin: 5px 5px 5px 5px;
+    border-radius: 0px;
+}
+
+section.main ul.main li img:hover {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 0.3s;
+}
+
+/* section para páginas de gêneros  */
+
+section.gen {
+    background: linear-gradient(to left, white, var(--cor3));
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+section.gen h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 2em;
+    padding: 10px;
+    color: var(--cor2);
+    text-align: center;
+    margin: auto;
+    flex: auto;
+}
+
+section.gen ul.turnos {
+    padding: 5px 10px 5px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+section.gen ul.turnos li {
+    max-height: 40px;
+}
+
+section.gen ul.turnos li img {
+    height: 40px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin: 5px 5px 5px 5px;
+    border-radius: 0px;
+}
+
+section.gen ul.turnos li img:hover {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.3s;
+}
+
+main {
+    max-width: 850px;
+    margin: auto;
+    background-color: var(--cor5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.35);
+    padding-bottom: 5px;
+}
+
+main p {
+    font-family: var(--fonte-corpo);
+    font-size: 1em;
+    text-align: justify;
+    text-indent: 3em;
+    padding: 12px;
+}
+
+p + ul.programas {
+    border-top: 1px solid white;
+}
+
+p + section.head {
+    border-top: 1px solid white;
+}
+
+section.head + ul.programas {
+    border-top: 1px solid white;
+}
+
+main ul.programas {
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    background-image: url(imagens/header-vinhetas-1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    border-bottom: 1px solid white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    align-items: center;
+}
+
+main ul.programas li {
+    flex: none;
+}
+
+main ul.programas li img {
+    max-height: 148px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+main ul.programas li img:hover {
+    outline: 3px solid var(--cor2);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+    transition: 0.2s;
+}
+
+main ul.generos {
+    padding: 10px;
+}
+
+main ul.generos li {
+    margin: 5px;
+    display: flex;
+}
+
+main ul.generos a {
+    background-color: var(--cor3);
+    color: var(--cor2);
+    font-family: var(--fonte-titulo);
+    font-size: 2em;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 20px;
+    display: inline-block;
+    flex: auto;
+}
+
+main ul.generos a:hover {
+    background-color: var(--cor5);
+    color: var(--cor4);
+    transition: 0.2s;
+}
+
+/* elementos das páginas de programas */
+
+section {
+    background: linear-gradient(to right, white, var(--cor7));
+    height: auto;
+}
+
+section h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 2em;
+    padding: 10px;
+    color: var(--cor6);
+    text-align: center;
+}
+
+section nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+section nav a {
+    font-family: var(--fonte-titulo);
+    color: var(--cor6);
+    background-color: var(--cor7);
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+section nav a + a {
+    border-left: 1px solid var(--cor5);
+}
+
+section nav a.selected {
+    font-family: var(--fonte-titulo);
+    color: var(--cor4);
+    background-color: var(--cor5);
+}
+
+section nav a:hover {
+    color: var(--cor2);
+    background-color: var(--cor5); 
+    transition: 0.2s;
+}
+
+section.apresentacao + p {
+    border-top: 1px solid white;
+}
+
+section.apresentacao {
+    background-image: url(imagens/background-5.jpg);
+    padding: 5px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+table.apresentacao {
+    margin: 10px;
+    width: 572px;
+    height: 170px;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+tr + tr {
+    border-top: 0.8px none var(--cor2);
+}
+
+table.apresentacao tr th {
+    font-family: var(--fonte-titulo);
+    font-size: 1em;
+    text-align: right;
+    background-image: linear-gradient(to left, var(--cor5), var(--cor4));
+    color: var(--cor2);
+    padding: 0px 10px;
+    width: 160px;
+}
+
+table.apresentacao tr td {
+    font-family: var(--fonte-corpo);
+    font-size: 0.8em;
+    text-align: center;
+    background-color: var(--cor5);
+    color: var(--cor1);
+    padding: 0px 10px;
+}
+
+table.apresentacao tr td:hover {
+    background-color: var(--cor4);
+    transition: 0.4s;
+}
+
+section.apresentacao img {
+    margin: auto;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+section.apresentacao img:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+section.abertura p {
+    text-align: justify;
+    font-size: 0.85em;
+}
+
+/* elementos das páginas de abertura e diversas */
+
+main ul.abertura {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url(imagens/header-vinhetas-2.jpg);
+    background-attachment: fixed;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+main ul.abertura li img {
+    max-height: 148px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+main ul.abertura li img:hover {
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.7);
+    transition: 0.3s;
+}
+
+main ul.diverso {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-image: url(imagens/header-vinhetas-2.jpg);
+    background-attachment: fixed;
+    border-top: 1px solid white;
+}
+
+main ul.diverso li img {
+    max-height: 148px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+main ul.diverso li img:hover {
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.7);
+    transition: 0.3s;
+}
+
+/* elementos dos guias de programas */
+
+main p.exibicao {
+    margin-bottom: -12px;
+}
+
+table.guia {
+    min-width: -webkit-fill-available;
+    margin: 1.4%;
+    }
+
+table tr th {
+    font-family: var(--fonte-submenu);
+    font-size: 1.05em;
+    padding: 0.2%;
+    text-align: center;
+    background-color: var(--cor6);
+    color: var(--cor7);
+    width: auto;
+    height: 32px;
+    }
+
+table.guia tr th.temporada {
+    font-family: var(--fonte-titulo);
+    font-size: 1.1em;
+    background-color: var(--cor1);
+    color: var(--cor3);
+}
+
+table.guia tr th.temporada:hover {
+    background-color: var(--cor4);
+    color: var(--cor2);
+    transition: 0.4s;
+}
+
+table tr {
+    background-color: var(--cor7);
+    max-height: 144px !important;
+}
+
+table tr:hover {
+    background-color: var(--cor3);
+    transition: 0.4s;
+}
+
+table th.numero {
+    font-family: var(--fonte-corpo);
+    font-size: 0.9em;
+    vertical-align: middle;
+    text-align: center;
+    width: 31px;
+    padding: 8px;
+    }
+
+table th.numero:hover {
+    transition: 0.4s;
+    color: var(--cor2);
+    background-color: var(--cor4);
+    }
+
+table td.imagem {
+    width: 160px;
+    background-color: var(--cor7);
+    }
+
+table td.imagem img {
+    margin-bottom: -4px;
+    }
+
+table td.sinopse {
+    width: auto;
+    font-family: var(--fonte-corpo);
+    font-size: 0.70em;
+    text-align: justify left;
+    padding: 8px;
+    }
+
+table td.dataoriginal {
+    font-family: var(--fonte-corpo);
+    font-size: 0.9em;
+    padding: 4px;
+    text-align: center;
+    width: 100px;
+    }
+
+table td.datareprise {
+    font-family: var(--fonte-corpo);
+    font-size: 0.9em;
+    padding: 4px;
+    text-align: center;
+    width: 100px;
+    }
+
+table td.dataoff {
+    width: auto;
+    font-family: var(--fonte-corpo);
+    font-weight: bold;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 8px;
+    background: var(--cor6);
+    color: var(--cor7);
+}
+
+table td.dataoff:hover {
+    transition: 0.4s;
+    color: var(--cor2);
+    background-color: var(--cor4);
+}
+
+table.ano {
+    width: auto;
+    margin: 10px;
+    position: relative;
+    }
+
+table.ano tr th {
+    font-family: var(--fonte-submenu);
+    font-size: 1.05em;
+    text-align: center;
+    background-color: var(--cor6);
+    color: var(--cor7);
+    height: 32px;
+    }
+
+table.ano tr th.topo {
+    position: sticky;
+    top: -1px;
+}
+
+table.ano tr th.temporada:hover {
+    background-color: var(--cor3);
+    transition: 0.4s;
+}
+
+table.ano tr {
+    background-color: var(--cor7);
+    max-height: 144px !important;
+}
+
+table.ano tr:hover {
+    background-color: var(--cor3);
+    transition: 0.4s;
+}
+
+table.ano th.numero {
+    font-family: var(--fonte-corpo);
+    font-size: 0.9em;
+    vertical-align: middle;
+    text-align: center;
+    width: 34px;
+    padding: 8px;
+    }
+
+table.ano td.imagem {
+    width: 190px;
+    background-color: var(--cor5);
+    }
+
+table.ano td.imagem img {
+    margin-bottom: -4px;
+    }
+
+table.ano td.sinopse {
+    font-family: var(--fonte-corpo);
+    font-size: 0.8em;
+    text-align: justify left;
+    padding: 8px;
+    }
+
+table.ano td.dataoriginal {
+    font-family: var(--fonte-corpo);
+    font-size: 0.9em;
+    padding: 4px;
+    text-align: center;
+    width: 96px;
+    }
+
+table.ano td.datareprise {
+    font-family: var(--fonte-corpo);
+    font-size: 0.9em;
+    padding: 4px;
+    text-align: center;
+    width: 96px;
+    }
+
+footer {
+    background-color: var(--cor1);
+    font-family: var(--fonte-submenu);
+    padding: 5px;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+    font-size: 0.85em;
+}
+
